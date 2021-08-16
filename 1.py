@@ -1,4 +1,16 @@
-print("haha")
-print("woshirencai")
-print("sdfsfsd")
-print("你是人才")
+import os
+import shutil
+def allFilePath(rootPath,allFIleList):
+    fileList = os.listdir(rootPath)
+    for temp in fileList:
+        if os.path.isfile(os.path.join(rootPath,temp)):
+            allFIleList.append(os.path.join(rootPath,temp))
+        else:
+            allFilePath(os.path.join(rootPath,temp),allFIleList)
+
+rootfile = r"./"
+
+fileList =[]
+allFilePath(rootfile,fileList)
+for file in fileList:
+    print(file)
