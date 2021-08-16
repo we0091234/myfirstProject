@@ -13,4 +13,5 @@ rootfile = r"./"
 fileList =[]
 allFilePath(rootfile,fileList)
 for file in fileList:
-    print(file)
+    if file.endswith(".txt"):
+        print(file)
